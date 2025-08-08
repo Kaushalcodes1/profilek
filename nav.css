@@ -1,0 +1,12 @@
+
+nav {
+  width: 50%;
+  background-color: #333;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #9ECAD6;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  background-color: #34699A;
+  color: white;
+  padding: 40px 0;
+}
+
+header h1 {
+  font-size: 2.5em;
+}
+
+section {
+  margin: 40px 0;
+}
+
+#about img {
+  max-width: 170px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+#skills ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.project {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+#resume a {
+  color: blue;
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #333;
+  color: white;
+  margin-top: 40px;
+}
+
+/* About section layout */
+#about .about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 50px;
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+/* Image animation: center → right */
+.about-img {
+  max-width: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Start centered */
+  opacity: 0;
+  animation: slideToRightFixed 1.2s ease-out forwards;
+}
+
+/* Text fades in after image slides */
+.about-text {
+  opacity: 0;
+  animation: fadeInText 1.2s ease-in forwards;
+  animation-delay: 1.2s; /* starts after image animation */
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  z-index: 1;
+}
+
+/* Animation: Image slides to right side */
+@keyframes slideToRightFixed {
+  0% {
+    left: 0%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    right: 0;
+    transform: translate(0, -50%);
+    opacity: 1;
+    position: relative;
+  }
+}
+
+/* Paragraph fade-in */
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
+}
